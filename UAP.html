@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <h3>Table data barang</h3>
+    <table style="text-align: center; border: 3px black solid;">
+      <tr>
+        <td>Kode</td>
+        <td>Nama Barang</td>
+        <td>Harga</td>
+      </tr>
+      <tr>
+        <td>001</td>
+        <td>A</td>
+        <td>10.000</td>
+      </tr>
+      <tr>
+        <td>002</td>
+        <td>B</td>
+        <td>20.000</td>
+      </tr>
+      <tr>
+        <td>003</td>
+        <td>C</td>
+        <td>30.000</td>
+      </tr>
+    </table>
+    <h3>Inputan User</h3>
+    <form>
+      <table>
+        <tr>
+          <td>Masukkan Kode</td>
+          <td>:</td>
+          <td><input type="text" id="inputanA" value="" /></td>
+        </tr>
+        <tr>
+          <td>Banyaknya barang</td>
+          <td>:</td>
+          <td><input type="text" id="inputanB" value="" /></td>
+        </tr>
+      </table>
+      <input type="submit" onclick="hitungbarang()" value="Submit" />
+    </form>
+
+    <script>
+      function hitungbarang() {
+        var kode = document.getElementById("inputanA").value;
+        var jumlah = document.getElementById("inputanB").value;
+
+        if (kode == "001") {
+          var C = 10000 * parseInt(jumlah);
+        }
+
+        if (kode == "002") {
+          var C = 20000 * parseInt(jumlah);
+        }
+
+        if (kode == "003") {
+          var C = 30000 * parseInt(jumlah);
+        }
+
+        alert("Total pembayaran anda adalah : " + C);
+
+        var uang = window.prompt("Masukkan uang user :");
+
+        if (uang >= C) {
+          var kembalian = parseInt(uang) - parseInt(C);
+          alert("Total kembalian anda adalah : " + kembalian);
+        } else {
+          alert("Uang anda kurang : " + (parseInt(C) - parseInt(uang)));
+        }
+      }
+    </script>
+  </body>
+</html>
